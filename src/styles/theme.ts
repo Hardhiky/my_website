@@ -1,68 +1,91 @@
-import { DefaultTheme, keyframes } from 'styled-components';
+import { css, keyframes } from 'styled-components';
 
 // Keyframe animations
-export const float = keyframes`
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+const gradient = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 `;
 
-export const pulseGlow = keyframes`
-  0% { filter: brightness(100%) drop-shadow(0 0 5px rgba(255, 0, 0, 0.7)); }
-  50% { filter: brightness(120%) drop-shadow(0 0 15px rgba(255, 0, 0, 0.9)); }
-  100% { filter: brightness(100%) drop-shadow(0 0 5px rgba(255, 0, 0, 0.7)); }
+const ambient = keyframes`
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.6;
+  }
 `;
 
-export const fadeIn = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
+const scanline = keyframes`
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 `;
 
-export const slideIn = keyframes`
-  from { transform: translateX(-100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+const cardFlip = keyframes`
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
 `;
 
-export const rotate = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+const hover = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 `;
 
 // Default theme
-export const theme: DefaultTheme = {
+export const theme = {
   colors: {
     bg: '#0a0a0a',
-    dark: '#121212',
-    primary: '#ff3e3e',
-    secondary: '#4a4a4a',
-    accent: '#8b00ff',
+    dark: '#1a1022',
+    primary: '#FF1744',
+    secondary: '#8B2F9B',
+    accent: '#00E5FF',
     text: '#ffffff',
     textSecondary: '#b3b3b3',
-    neonRed: '#ff0000',
-    neonBlue: '#00f3ff',
-    neonPurple: '#8b00ff',
-    cardBg: 'rgba(18, 18, 18, 0.8)',
-    cardBgHover: 'rgba(24, 24, 24, 0.9)',
+    neonRed: '#FF1744',
+    neonBlue: '#00E5FF',
+    neonPurple: '#8B2F9B',
+    cardBg: 'rgba(20, 0, 20, 0.8)',
+    cardBgHover: 'rgba(30, 0, 30, 0.9)',
   },
   fonts: {
-    primary: '"Press Start 2P", cursive',
-    secondary: '"Roboto Mono", monospace',
-    code: '"Fira Code", monospace',
+    primary: "'JetBrains Mono', monospace",
+    secondary: "'Press Start 2P', cursive",
+    code: "'Fira Code', monospace",
   },
   shadows: {
-    card: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    cardHover: '0 10px 20px rgba(0, 0, 0, 0.2)',
+    card: '0 0 20px rgba(255, 70, 85, 0.2)',
+    cardHover: '0 0 30px rgba(255, 70, 85, 0.4)',
     text: '0 0 10px rgba(255, 255, 255, 0.5)',
-    neonRed: '0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000',
-    neonBlue: '0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 30px #00f3ff',
-    neonPurple: '0 0 10px #8b00ff, 0 0 20px #8b00ff, 0 0 30px #8b00ff',
+    neonRed: '0 0 10px #FF1744, 0 0 20px #FF1744, 0 0 30px #FF1744',
+    neonBlue: '0 0 10px #00E5FF, 0 0 20px #00E5FF, 0 0 30px #00E5FF',
+    neonPurple: '0 0 10px #8B2F9B, 0 0 20px #8B2F9B, 0 0 30px #8B2F9B',
   },
   animations: {
-    float: `${float} 3s ease-in-out infinite`,
-    pulseGlow: `${pulseGlow} 2s ease-in-out infinite`,
-    fadeIn: `${fadeIn} 0.5s ease-in`,
-    slideIn: `${slideIn} 0.5s ease-out`,
-    rotate: `${rotate} 2s linear infinite`,
+    gradient: css`${gradient} 15s ease infinite`,
+    ambient: css`${ambient} 10s ease infinite`,
+    scanline: css`${scanline} 2s linear infinite`,
+    cardFlip: css`${cardFlip} 1s ease-in-out`,
+    hover: css`${hover} 2s ease-in-out infinite`,
   },
   breakpoints: {
     mobile: '320px',

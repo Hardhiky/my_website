@@ -30,11 +30,11 @@ declare module 'styled-components' {
       neonPurple: string;
     };
     animations: {
-      float: string;
-      pulseGlow: string;
-      fadeIn: string;
-      slideIn: string;
-      rotate: string;
+      gradient: any;
+      ambient: any;
+      scanline: any;
+      cardFlip: any;
+      hover: any;
     };
     breakpoints: {
       mobile: string;
