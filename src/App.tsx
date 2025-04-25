@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { GlobalStyles, theme } from './styles/GlobalStyles';
 import { ProjectCard } from './components/ProjectCard';
@@ -149,11 +149,6 @@ const Header = styled.header`
   align-items: center;
   justify-content: center;
 `;
-
-interface Position {
-  x: number;
-  y: number;
-}
 
 const MarqueeContainer = styled.div`
   position: relative;
@@ -307,7 +302,7 @@ const Copyright = styled.div`
 
 function Navigation() {
   const location = useLocation();
-  
+
   return (
     <Nav>
       <ProfileImage>

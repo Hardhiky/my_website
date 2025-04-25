@@ -9,31 +9,38 @@ declare module 'styled-components' {
       secondary: string;
       accent: string;
       text: string;
-      rust: string;
-      python: string;
-      react: string;
-      node: string;
+      textSecondary: string;
+      neonRed: string;
+      neonBlue: string;
+      neonPurple: string;
+      cardBg: string;
+      cardBgHover: string;
     };
     fonts: {
       primary: string;
       secondary: string;
+      code: string;
     };
     shadows: {
       card: string;
       cardHover: string;
-      project: string;
-      skill: string;
-      achievement: string;
+      text: string;
+      neonRed: string;
+      neonBlue: string;
+      neonPurple: string;
     };
     animations: {
       float: string;
       pulseGlow: string;
-      cardFlip: string;
-      gradient: string;
-      ambient: string;
-      scanline: string;
-      hover: string;
+      fadeIn: string;
       slideIn: string;
+      rotate: string;
+    };
+    breakpoints: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+      wide: string;
     };
   }
 } 
