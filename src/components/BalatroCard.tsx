@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { theme } from '../styles/GlobalStyles';
+import { theme } from '../styles/theme';
 
 interface BalatroCardProps {
   title: string;
@@ -11,9 +11,20 @@ interface BalatroCardProps {
   className?: string;
 }
 
-const CardContainer = styled.div`
+const CardContainer = styled(motion.div)<{ rarity: BalatroCardProps['rarity'] }>`
   background: ${({ theme }) => theme.colors.cardBg};
-  border: 2px solid ${({ theme }) => theme.colors.neonRed};
+  border: 2px solid ${({ theme, rarity }) => {
+    switch (rarity) {
+      case 'legendary':
+        return theme.colors.neonRed;
+      case 'epic':
+        return theme.colors.neonPurple;
+      case 'rare':
+        return theme.colors.neonBlue;
+      default:
+        return 'rgba(255, 255, 255, 0.2)';
+    }
+  }};
   border-radius: 8px;
   padding: 1.5rem;
   transition: all 0.3s ease;
@@ -25,7 +36,6 @@ const CardContainer = styled.div`
   &:hover {
     transform: translateY(-5px);
     box-shadow: ${({ theme }) => theme.shadows.cardHover};
-    border-color: ${({ theme }) => theme.colors.neonBlue};
   }
 `;
 
