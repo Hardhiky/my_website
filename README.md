@@ -1,54 +1,139 @@
-# React + TypeScript + Vite
+# 🌟 Hardhik's Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, cyberpunk-themed personal portfolio website built with React and styled-components, featuring interactive poker-themed skill cards and neon aesthetics.
 
-Currently, two official plugins are available:
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![React](https://img.shields.io/badge/React-18.x-61DAFB.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg)
+![Vite](https://img.shields.io/badge/Vite-5.x-646CFF.svg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+### 🎮 Interactive UI Elements
+- **Poker-Themed Skill Cards**: Skills presented as interactive playing cards
+- **Neon Glow Effects**: Cyberpunk-inspired design with dynamic neon animations
+- **Responsive Layout**: Seamless experience across all devices
+- **Smooth Transitions**: Page transitions and hover effects
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📋 Key Sections
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+#### 🏠 Home
+- Dynamic hero section with animated title
+- Social media links with hover effects
+- Featured projects showcase
+- Skills display with poker hand rankings
+
+#### 💼 Experience
+- Interactive timeline/tree visualization
+- Detailed work history and achievements
+- Animated experience cards
+- Professional journey highlights
+
+#### 🛠️ Projects
+- Project cards with live previews
+- GitHub integration
+- Tech stack display
+- Detailed project descriptions
+
+#### 📝 Resume
+- PDF preview integration
+- Download functionality
+- Professional experience showcase
+- Skills and achievements
+
+#### 📞 Contact
+- Interactive contact form
+- Email integration
+- ChatGPT integration for message improvement
+- Form validation and success/error handling
+
+#### ℹ️ About
+- Personal background and interests
+- Tech philosophy
+- Current adventures
+- Skills and expertise
+
+### 🎨 Design Features
+- Custom neon glow effects
+- Retro-futuristic typography
+- Dynamic color schemes
+- Smooth animations and transitions
+
+## 🚀 Tech Stack
+
+- **Frontend Framework**: React with TypeScript
+- **Build Tool**: Vite
+- **Styling**: styled-components
+- **Animations**: Framer Motion
+- **Routing**: React Router
+- **Icons**: React Icons
+- **Email Integration**: EmailJS
+- **Form Handling**: React Hook Form
+- **Version Control**: Git
+- **Deployment**: GitHub Pages
+
+## 🛠️ Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Hardhiky/my_website.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   cd my_website
+   npm install
+   ```
+
+3. Create a `.env` file with your credentials:
+   ```env
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   VITE_EMAILJS_SERVICE_ID=your_service_id
+   VITE_EMAILJS_TEMPLATE_ID=your_template_id
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 📦 Building for Production
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The built files will be in the `dist` directory.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔧 Configuration
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **Styling**: Edit `src/styles/GlobalStyles.ts` for global styles
+- **Theme**: Modify `src/styles/theme.ts` for theme configuration
+- **Routes**: Update `src/App.tsx` for routing configuration
+- **Components**: Located in `src/components/`
+- **Pages**: Found in `src/pages/`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by cyberpunk aesthetics
+- Card design inspired by Balatro
+- Icons from React Icons
+- Animations powered by Framer Motion
+
+## 📧 Contact
+
+Hardhik Y - [hardhikyd9@gmail.com](mailto:hardhikyd9@gmail.com)
+
+Project Link: [https://github.com/Hardhiky/my_website](https://github.com/Hardhiky/my_website)
