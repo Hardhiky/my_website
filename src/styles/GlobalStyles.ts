@@ -1,28 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
-export const theme = {
-  colors: {
-    background: '#0f0721',
-    primary: '#ff4655',
-    secondary: '#7b2cbf',
-    accent: '#ffd700',
-    text: '#ffffff',
-    rust: '#f74c00',
-    python: '#3776ab',
-    react: '#61dafb',
-    node: '#68a063'
-  },
-  fonts: {
-    primary: "'JetBrains Mono', monospace",
-    secondary: "'Press Start 2P', cursive"
-  },
-  shadows: {
-    card: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    project: '0 8px 16px rgba(0, 0, 0, 0.2)',
-    skill: '0 2px 4px rgba(0, 0, 0, 0.15)',
-    achievement: '0 6px 12px rgba(0, 0, 0, 0.25)'
-  }
-};
+import { theme } from './theme';
 
 export const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap');
@@ -34,9 +11,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${theme.colors.background};
-    color: ${theme.colors.text};
-    font-family: ${theme.fonts.primary};
+    background-color: ${({ theme }) => theme.colors.bg};
+    color: ${({ theme }) => theme.colors.text};
+    font-family: ${({ theme }) => theme.fonts.primary};
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
@@ -131,4 +108,23 @@ export const GlobalStyles = createGlobalStyle`
   ::-webkit-scrollbar-thumb:hover {
     background: ${theme.colors.secondary};
   }
-`; 
+
+  a {
+    color: ${({ theme }) => theme.colors.primary};
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.accent};
+    }
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+  }
+`;
+
+export { theme }; 
