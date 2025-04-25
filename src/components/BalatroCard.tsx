@@ -11,31 +11,21 @@ interface BalatroCardProps {
   className?: string;
 }
 
-const CardContainer = styled(motion.div)<{ rarity: string }>`
-  position: relative;
-  background-color: ${theme.colors.dark};
+const CardContainer = styled.div`
+  background: ${({ theme }) => theme.colors.cardBg};
+  border: 2px solid ${({ theme }) => theme.colors.neonRed};
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: ${props => theme.shadows[props.rarity as keyof typeof theme.shadows]};
-  border: 2px solid ${props => {
-    switch (props.rarity) {
-      case 'legendary':
-        return theme.colors.primary;
-      case 'epic':
-        return theme.colors.secondary;
-      case 'rare':
-        return theme.colors.accent;
-      default:
-        return 'rgba(255, 255, 255, 0.2)';
-    }
-  }};
-  transform-style: preserve-3d;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease;
+  box-shadow: ${({ theme }) => theme.shadows.card};
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: ${theme.shadows.cardHover};
+    transform: translateY(-5px);
+    box-shadow: ${({ theme }) => theme.shadows.cardHover};
+    border-color: ${({ theme }) => theme.colors.neonBlue};
   }
 `;
 

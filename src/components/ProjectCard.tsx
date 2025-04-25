@@ -7,7 +7,6 @@ interface ProjectCardProps {
   description: string;
   techStack: string[];
   githubUrl: string;
-  image?: string;
 }
 
 const Card = styled.div`
@@ -88,7 +87,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   techStack,
   githubUrl,
-  image,
 }) => {
   return (
     <Card>
