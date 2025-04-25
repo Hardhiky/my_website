@@ -29,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
       background: 
         radial-gradient(circle at 50% 50%, rgba(255, 70, 85, 0.15) 0%, transparent 60%),
         radial-gradient(circle at 100% 0%, rgba(139, 47, 155, 0.1) 0%, transparent 50%),
-        linear-gradient(45deg, ${theme.colors.background} 0%, #1a1022 100%);
+        linear-gradient(45deg, ${({ theme }) => theme.colors.bg} 0%, #1a1022 100%);
       background-size: 200% 200%;
       animation: gradient 15s ease infinite;
       pointer-events: none;
@@ -97,16 +97,16 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-track {
-    background: ${theme.colors.background};
+    background: ${({ theme }) => theme.colors.bg};
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${theme.colors.primary};
+    background: ${({ theme }) => theme.colors.primary};
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.secondary};
   }
 
   a {

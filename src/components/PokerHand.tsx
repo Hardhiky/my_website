@@ -38,18 +38,26 @@ const Card = styled.div`
   position: relative;
   width: 180px;
   height: 260px;
-  background: ${theme.colors.background};
-  border-radius: 16px;
-  border: 3px solid ${theme.colors.primary};
-  padding: 1.5rem;
-  box-shadow: 
-    0 0 20px rgba(255, 70, 85, 0.2),
-    inset 0 0 15px rgba(255, 70, 85, 0.1);
+  background: ${({ theme }) => theme.colors.cardBg};
+  border-radius: 8px;
+  border: 2px solid ${({ theme }) => theme.colors.neonRed};
+  padding: 1rem;
+  margin: 0.5rem;
+  min-width: 120px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: ${({ theme }) => theme.shadows.card};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   overflow: visible;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: ${({ theme }) => theme.shadows.cardHover};
+    border-color: ${({ theme }) => theme.colors.neonBlue};
+  }
 `;
 
 const float = keyframes`

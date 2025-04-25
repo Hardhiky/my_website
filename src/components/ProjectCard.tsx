@@ -10,17 +10,21 @@ interface ProjectCardProps {
 }
 
 const Card = styled.div`
-  position: relative;
-  width: 100%;
-  min-height: 250px;
-  background: ${theme.colors.background};
-  border-radius: 12px;
+  background: ${({ theme }) => theme.colors.cardBg};
+  border: 2px solid ${({ theme }) => theme.colors.neonRed};
+  border-radius: 8px;
   padding: 1.5rem;
-  border: 3px solid ${theme.colors.primary};
-  box-shadow: 0 0 20px rgba(255, 70, 85, 0.2);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: ${({ theme }) => theme.shadows.card};
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: ${({ theme }) => theme.shadows.cardHover};
+    border-color: ${({ theme }) => theme.colors.neonBlue};
+  }
 `;
 
 const CardHeader = styled.div`
