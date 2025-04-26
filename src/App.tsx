@@ -15,13 +15,18 @@ import diamondLogo from './assets/diamond-logo.png';
 
 const AppContainer = styled.div`
   min-height: 100vh;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   position: relative;
-  margin-top: 4rem; /* Add margin to account for fixed nav */
+  margin-top: 4rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0.5rem;
+    margin-top: 3rem;
+  }
 `;
 
 const Nav = styled.nav`
@@ -38,6 +43,13 @@ const Nav = styled.nav`
     0 0 40px rgba(255, 31, 31, 0.4);
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const ProfileImage = styled.div`
@@ -53,6 +65,12 @@ const ProfileImage = styled.div`
   align-items: center;
   justify-content: center;
   background: transparent;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin: 0.5rem;
+    width: 30px;
+    height: 30px;
+  }
 
   img {
     width: 100%;
@@ -74,13 +92,19 @@ const ProfileImage = styled.div`
 const NavList = styled.ul`
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   list-style: none;
   padding: 0;
   margin: 0;
   max-width: 1200px;
   margin: 0 auto;
   flex: 1;
+  flex-wrap: wrap;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 0.5rem;
+    justify-content: center;
+  }
 `;
 
 const NavItem = styled(Link)`
@@ -94,6 +118,11 @@ const NavItem = styled(Link)`
   transition: all 0.3s ease;
   text-shadow: 0 0 6px #ff1f1f;
   position: relative;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
   
   &:hover, &.active {
     color: #ff1f1f;
@@ -129,6 +158,10 @@ const PageContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const pageTransition = {
@@ -147,6 +180,10 @@ const Header = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const MarqueeContainer = styled.div`
@@ -160,6 +197,11 @@ const MarqueeContainer = styled.div`
   border-radius: 28px;
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.9);
   min-width: 300px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0.6rem 1.5rem;
+    min-width: 250px;
+  }
 
   &::before {
     content: '';
@@ -193,6 +235,11 @@ const Title = styled.h1`
   z-index: 1;
   text-align: center;
   white-space: nowrap;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -207,6 +254,11 @@ const Subtitle = styled.h2`
   transition: opacity 0.3s ease;
   padding: 0 1rem;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
   &:hover {
     opacity: 1;
   }
@@ -220,6 +272,12 @@ const Links = styled.div`
   margin-top: 1rem;
   width: 100%;
   padding: 0 1rem;
+  flex-wrap: wrap;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
 
   a {
     color: #ffffff;
@@ -234,6 +292,12 @@ const Links = styled.div`
     height: 40px;
     border-radius: 50%;
     border: 2px solid transparent;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      width: 35px;
+      height: 35px;
+      font-size: 1.2rem;
+    }
 
     &:hover {
       opacity: 1;
